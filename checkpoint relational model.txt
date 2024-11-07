@@ -1,0 +1,94 @@
+To convert the Entity Relationship (ER) model from the provided link into a relational diagram, we'll need to extract the entities, relationships, and their attributes. Based on the image you provided, here’s how to convert the ER model into a relational model:
+
+Entities and Their Attributes:
+Hotel
+
+Attributes:
+HotelID (Primary Key)
+HotelName
+Location
+Rating
+Price
+Guest
+
+Attributes:
+GuestID (Primary Key)
+FirstName
+LastName
+Gender
+DateOfBirth
+Room
+
+Attributes:
+RoomID (Primary Key)
+RoomType
+Capacity
+Price
+Reservation
+
+Attributes:
+ReservationID (Primary Key)
+GuestID (Foreign Key)
+HotelID (Foreign Key)
+RoomID (Foreign Key)
+ReservationDate
+CheckInDate
+CheckOutDate
+Relationships:
+Hotel to Room:
+
+A Hotel can have multiple Rooms.
+This is a one-to-many relationship (1 Hotel : Many Rooms).
+The Room table will include a foreign key HotelID referring to the Hotel table.
+Guest to Reservation:
+
+A Guest can make multiple Reservations.
+This is a one-to-many relationship (1 Guest : Many Reservations).
+The Reservation table will include a foreign key GuestID referring to the Guest table.
+Room to Reservation:
+
+A Room can have multiple Reservations, but each reservation is for a specific room.
+This is a one-to-many relationship (1 Room : Many Reservations).
+The Reservation table will include a foreign key RoomID referring to the Room table.
+Hotel to Reservation:
+
+A Hotel can have multiple Reservations.
+This is a one-to-many relationship (1 Hotel : Many Reservations).
+The Reservation table will include a foreign key HotelID referring to the Hotel table.
+Relational Diagram:
+Hotel:
+
+HotelID (PK)
+HotelName
+Location
+Rating
+Price
+Guest:
+
+GuestID (PK)
+FirstName
+LastName
+Gender
+DateOfBirth
+Room:
+
+RoomID (PK)
+RoomType
+Capacity
+Price
+HotelID (FK)
+Reservation:
+
+ReservationID (PK)
+GuestID (FK)
+HotelID (FK)
+RoomID (FK)
+ReservationDate
+CheckInDate
+CheckOutDate
+Explanation of Relationships:
+The Reservation table links the Guest, Hotel, and Room tables through their respective foreign keys.
+The Hotel table has a one-to-many relationship with the Room table (a hotel can have many rooms).
+The Guest table has a one-to-many relationship with the Reservation table (a guest can make many reservations).
+The Room table has a one-to-many relationship with the Reservation table (a room can be reserved multiple times).
+This relational model will allow the director to manage and track hotel data, guest reservations, and room availability efficiently.
